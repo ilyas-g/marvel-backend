@@ -11,6 +11,9 @@ app.get("/", (req, res) => {
     res.json("Welcome on Marvel Api ! 🎉");
 });
 
+const comicsRoutes = require("./routes/comics");
+app.use(comicsRoutes);
+
 app.all("*", (req, res) => {
     res.status(400).json({ message: "Page not found" });
 });
