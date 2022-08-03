@@ -10,7 +10,6 @@ router.get("/character/:characterId", async (req, res) => {
         // console.log(response.data);
         console.log("ID CHARACTER : " + req.params.name);
         res.json(response.data);
-
     } catch (error) {
         res.status(400).json(error.message);
     }

@@ -8,7 +8,6 @@ router.get("/characters", async (req, res) => {
         console.log("route log characters");
         // console.log(response.data);
         res.json(response.data);
-
     } catch (error) {
         res.status(400).json(error.message);
     }
