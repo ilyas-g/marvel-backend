@@ -29,15 +29,15 @@ app.all("*", (req, res) => {
     res.status(400).json({ message: "Page not found" });
 });
 
-if (process.env.PORT) {
-    app.listen(process.env.PORT, () => {
-        console.log("Server startedddddd");
-    });
-} else {
-    app.listen(3001, () => {
-        console.log("Server startedssssss");
-    });
-}
+// if (process.env.PORT) {
+//     app.listen(process.env.PORT, () => {
+//         console.log("Server startedddddd");
+//     });
+// } else {
+//     app.listen(3001, () => {
+//         console.log("Server startedssssss");
+//     });
+// }
 
 app.listen(process.env.PORT || 3001, () => {
     console.log("Server startedqqqqqq");
