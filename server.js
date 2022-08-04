@@ -41,4 +41,6 @@ if (process.env.PORT) {
 
 app.listen(process.env.PORT || 3001, () => {
     console.log("Server startedqqqqqq");
+    const port = server.address().port;
+    console.log(`Express is working on port ${port}`);
 });
