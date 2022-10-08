@@ -4,7 +4,13 @@ const router = express.Router();
 
 router.get("/characters", async (req, res) => {
     try {
-        const response = await axios.get(`https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}`);
+        const page = req.query;
+        const offset = page * 100 - 100;
+
+        const response = await axios.get(
+            `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}&limit=100&offset=${offset}`
+        );
+        // if (req.query.limit <= 10) req.query.limit = 10;
         console.log("route log characters");
         // console.log(response.data);
         res.json(response.data);
