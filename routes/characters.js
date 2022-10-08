@@ -6,9 +6,10 @@ router.get("/characters", async (req, res) => {
     try {
         const page = req.query;
         const skip = page * 100;
+        let limit;
 
         const response = await axios.get(
-            `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}&limit=100&skip=${skip}`
+            `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}&limit=${limit}&skip=${skip}`
         );
         // if (req.query.limit <= 10) req.query.limit = 10;
         console.log("route log characters");
