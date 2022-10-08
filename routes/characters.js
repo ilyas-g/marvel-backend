@@ -4,12 +4,11 @@ const router = express.Router();
 
 router.get("/characters", async (req, res) => {
     try {
+        const { page } = req.query;
+        const offset = page * 100 - 100;
 
-        // const offset = page * 100 - 100;
-        // let limit = req.query.limit;
-        // limit = 100;
         const response = await axios.get(
-            `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}&skip=${req.query.page}&limit=100`
+            `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}&skip=${offset}&limit=100`
         );
         // if (req.query.limit < 1 || req.query.limit > 100) {
         //     res.status(400).json({ message: "Limit must be between 1 and 100" });
